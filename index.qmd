@@ -141,15 +141,23 @@ z_normed_distance = np.sqrt(np.sum((x_normed - y_normed)**2))
 
 ## Applications 🚀
 
+- Motify Discovery 💡
+- Anomaly / Novelty Discovery 👽
+- Semantic Segmentation ✂
+- Fast Pattern Matching 🪢
+- Time Series Chains ⛓️
+- Simliarties Between Two Time Series 🧬
+- Shapelet + ML 💠
+
 Tutorials: [stumpy.readthedocs.io/en/latest/tutorials.html](https://stumpy.readthedocs.io/en/latest/tutorials.html)
 
-# Motify Discovery
+# Motify Discovery 💡
 
-## Motify Discovery
+## Motify Discovery 💡
 
 ![](images/steam_flow.png){width="100%"}
 
-## Motify Discovery
+## Motify Discovery 💡
 
 `stumpy.stump`
 
@@ -161,27 +169,27 @@ motif_idx = np.argsort(mp_steam[:, 0])[0]
 nearest_neighbor_idx = mp_steam[motif_idx, 1]
 ```
 
-## Moify Discovery
+## Moify Discovery 💡
 
 ![](images/steam_motify.png)
 
-# Anomaly / Novelty Discovery
+# Anomaly / Novelty Discovery 👽
 
-## Anomaly / Novelty Discovery
+## Anomaly / Novelty Discovery 👽
 
 ![](images/steam_flow_discord.png)
 
-# Semantic Segmentation
+# Semantic Segmentation ✂
 
-## Semantic Segmentation
+## Semantic Segmentation ✂
 
 ![](images/blood_pressure.png)
 
-## Semantic Segmentation
+## Semantic Segmentation ✂
 
 ![](images/blood_pressure_segmentation.png)
 
-## Semantic Segmentation
+## Semantic Segmentation ✂
 
 `stump.fluss`
 
@@ -197,22 +205,22 @@ cac, regime_locations = stumpy.fluss(
 )
 ```
 
-## Semantic Segmentation
+## Semantic Segmentation ✂
 
 ![](images/blood_pressure_fluss.png)
 
-# Fast Pattern Matching
+# Fast Pattern Matching 🪢
 
-## Fast Pattern Matching
+## Fast Pattern Matching 🪢
 
 ![](images/robot_dog.png)
 
-## Fast Pattern Matching
+## Fast Pattern Matching 🪢
 ### Query
 
 ![](images/query_subsequence.png)
 
-## Fast Pattern Matching
+## Fast Pattern Matching 🪢
 
 `stumpy.mass`
 
@@ -224,11 +232,11 @@ idx = np.argmin(distance_profile)
 
 ![](images/pattern_match_query_vs_nn.png)
 
-## Fast Pattern Matching
+## Fast Pattern Matching 🪢
 
 ![](images/match_find.png)
 
-## Fast Pattern Matching
+## Fast Pattern Matching 🪢
 
 `stump.match`
 
@@ -241,21 +249,21 @@ matches = stumpy.match(
 
 ![](images/many_match_find.png)
 
-# Time Series Chains
+# Time Series Chains ⛓️
 
-## Time Series Chains
+## Time Series Chains ⛓️
 
 ![](images/time_series_chains.png)
 
-## Time Series Chains
+## Time Series Chains ⛓️
 
 ![](images/time_series_chain_1.png)
 
-## Time Series Chains
+## Time Series Chains ⛓️
 
 ![](images/volumne_per_year.png)
 
-## Time Series Chains
+## Time Series Chains ⛓️
 
 `stump.allc`
 
@@ -269,21 +277,21 @@ all_chain_set, unanchored_chain = stumpy.allc(
 )
 ```
 
-## Time Series Chains
+## Time Series Chains ⛓️
 
 ![](images/volume_chain_year.png)
 
-## Time Series Chains
+## Time Series Chains ⛓️
 
 ![](images/volume_chain_year_only.png)
 
-# Simliarties Between Two Time Series
+# Simliarties Between Two Time Series 🧬
 
-## Simliarties Between Two Time Series
+## Simliarties Between Two Time Series 🧬
 
 ![](images/under_pressure_vs_ice_ice_baby.png)
 
-## Simliarties Between Two Time Series
+## Simliarties Between Two Time Series 🧬
 
 `stumpy.stump`
 
@@ -297,11 +305,11 @@ queen_mp = stumpy.stump(
 )
 ```
 
-## Simliarties Between Two Time Series
+## Simliarties Between Two Time Series 🧬
 
 ![](images/under_pressure_vs_ice_ice_baby_profile.png)
 
-## Simliarties Between Two Time Series
+## Simliarties Between Two Time Series 🧬
 
 ```python
 queen_motif_index = queen_mp[:, 0].argmin()
@@ -310,13 +318,13 @@ vanilla_ice_motif_index = queen_mp[queen_motif_index, 1]
 
 ![](images/under_pressure_ice_ice_overlap.png)
 
-# Shapelet
+# Shapelet 💠
 
-## Shapelet
+## Shapelet 💠
 
 ![](images/point_vs_gun.png)
 
-## Shapelet
+## Shapelet 💠
 
 ```{.python code-line-numbers="|3|5"}
 m = 38
@@ -328,11 +336,11 @@ P_Point_Gun_mp = stumpy.stump(T_A=point, m=m, T_B=gun, ignore_trivial=False)
 
 ![](images/point_gun_point_point_diff.png)
 
-## Shapelet
+## Shapelet 💠
 
 ![](images/point_shaplets.png){width=100%}
 
-## Shapelet + ML
+## Shapelet + ML 💠
 
 ```{.python code-line-numbers="|1-7|4-10"}
 print(train_ts.shape)
@@ -346,7 +354,7 @@ print(X_train.shape)
 X_test = distance_to_shapelets(test_ts, point_shapelets)
 ```
 
-## Shapelet + ML
+## Shapelet + ML 💠
 
 ```python
 from sklearn.ensemble import RandomForestClassifier
@@ -453,6 +461,8 @@ stream.update(new_data_point)
 
 **Learn More**: [stumpy.readthedocs.io/en/latest/tutorials.html](https://stumpy.readthedocs.io/en/latest/tutorials.html)
 
+**Slides**: [github.com/thomasjpfan/pydata-nyc-meetup-2024-stumpy](https://www.github.com/thomasjpfan/pydata-nyc-meetup-2024-stumpy){.talk-link}
+
 ---
 
 :::: {.social-media}
@@ -466,5 +476,4 @@ Thomas J. Fan
 [](https://www.twitter.com/thomasjpfan){.fa-brands .fa-twitter}
 [](https://www.linkedin.com/in/thomasjpfan/){.fa-brands .fa-linkedin}
 
-[github.com/thomasjpfan/pydata-nyc-meetup-2024-stumpy](https://www.github.com/thomasjpfan/pydata-nyc-meetup-2024-stumpy){.talk-link}
 :::::
