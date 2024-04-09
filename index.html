@@ -561,9 +561,6 @@
 <span id="cb2-3"><a></a></span>
 <span id="cb2-4"><a></a>motif_idx <span class="op">=</span> np.argsort(mp_steam[:, <span class="dv">0</span>])[<span class="dv">0</span>]</span>
 <span id="cb2-5"><a></a>nearest_neighbor_idx <span class="op">=</span> mp_steam[motif_idx, <span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="moify-discovery" class="slide level2 center">
-<h2>Moify Discovery 💡</h2>
 <p><img data-src="images/steam_motify.png"></p>
 </section></section>
 <section>
@@ -600,9 +597,6 @@
 <span id="cb3-7"><a></a>    n_regimes<span class="op">=</span><span class="dv">2</span>,</span>
 <span id="cb3-8"><a></a>    excl_factor<span class="op">=</span><span class="dv">1</span>,</span>
 <span id="cb3-9"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="semantic-segmentation-4" class="slide level2 center">
-<h2>Semantic Segmentation ✂</h2>
 <p><img data-src="images/blood_pressure_fluss.png"></p>
 </section></section>
 <section>
@@ -667,12 +661,9 @@
 <span id="cb6-5"><a></a>    mp_volume[:, <span class="dv">2</span>],</span>
 <span id="cb6-6"><a></a>    mp_volume[:, <span class="dv">3</span>],</span>
 <span id="cb6-7"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="time-series-chains-5" class="slide level2 center">
-<h2>Time Series Chains ⛓️</h2>
 <p><img data-src="images/volume_chain_year.png"></p>
 </section>
-<section id="time-series-chains-6" class="slide level2 center">
+<section id="time-series-chains-5" class="slide level2 center">
 <h2>Time Series Chains ⛓️</h2>
 <p><img data-src="images/volume_chain_year_only.png"></p>
 </section></section>
@@ -689,21 +680,19 @@
 <h2>Simliarties Between Two Time Series 🧬</h2>
 <p><code>stumpy.stump</code></p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a>m <span class="op">=</span> <span class="dv">500</span></span>
-<span id="cb7-2"><a></a>queen_mp <span class="op">=</span> stumpy.stump(</span>
-<span id="cb7-3"><a></a>  T_A <span class="op">=</span> queen,</span>
+<span id="cb7-2"><a></a>under_pressure_mp <span class="op">=</span> stumpy.stump(</span>
+<span id="cb7-3"><a></a>  T_A <span class="op">=</span> under_pressure,</span>
 <span id="cb7-4"><a></a>  m <span class="op">=</span> m,</span>
 <span id="cb7-5"><a></a>  T_B <span class="op">=</span> ice_ice_baby,</span>
 <span id="cb7-6"><a></a>  ignore_trivial <span class="op">=</span> <span class="va">False</span></span>
 <span id="cb7-7"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img data-src="images/under_pressure_vs_ice_ice_baby_profile.png"></p>
 </section>
 <section id="simliarties-between-two-time-series-3" class="slide level2 center">
 <h2>Simliarties Between Two Time Series 🧬</h2>
-<p><img data-src="images/under_pressure_vs_ice_ice_baby_profile.png"></p>
-</section>
-<section id="simliarties-between-two-time-series-4" class="slide level2 center">
-<h2>Simliarties Between Two Time Series 🧬</h2>
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a>queen_motif_index <span class="op">=</span> queen_mp[:, <span class="dv">0</span>].argmin()</span>
-<span id="cb8-2"><a></a>vanilla_ice_motif_index <span class="op">=</span> queen_mp[queen_motif_index, <span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a>under_pressure_motif_index <span class="op">=</span> under_pressure_mp[:, <span class="dv">0</span>].argmin()</span>
+<span id="cb8-2"><a></a></span>
+<span id="cb8-3"><a></a>vanilla_ice_motif_index <span class="op">=</span> under_pressure_mp[under_pressur_motif_index, <span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><img data-src="images/under_pressure_ice_ice_overlap.png"></p>
 </section></section>
 <section>

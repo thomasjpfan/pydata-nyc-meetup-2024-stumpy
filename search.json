@@ -70,13 +70,6 @@
     "text": "Motify Discovery 💡\nstumpy.stump\nm = 640\nmp_steam = stumpy.stump(steam_flow, m)\n\nmotif_idx = np.argsort(mp_steam[:, 0])[0]\nnearest_neighbor_idx = mp_steam[motif_idx, 1]"
   },
   {
-    "objectID": "index.html#moify-discovery",
-    "href": "index.html#moify-discovery",
-    "title": "",
-    "section": "Moify Discovery 💡",
-    "text": "Moify Discovery 💡"
-  },
-  {
     "objectID": "index.html#anomaly-novelty-discovery-1",
     "href": "index.html#anomaly-novelty-discovery-1",
     "title": "",
@@ -103,13 +96,6 @@
     "title": "",
     "section": "Semantic Segmentation ✂",
     "text": "Semantic Segmentation ✂\nstump.fluss\nm = L = 210\nmp_adp = stumpy.stump(abp, m=m)\n\ncac, regime_locations = stumpy.fluss(\n    mp_adp[:, 1],\n    L=L,\n    n_regimes=2,\n    excl_factor=1,\n)"
-  },
-  {
-    "objectID": "index.html#semantic-segmentation-4",
-    "href": "index.html#semantic-segmentation-4",
-    "title": "",
-    "section": "Semantic Segmentation ✂",
-    "text": "Semantic Segmentation ✂"
   },
   {
     "objectID": "index.html#fast-pattern-matching-1",
@@ -182,13 +168,6 @@
     "text": "Time Series Chains ⛓️"
   },
   {
-    "objectID": "index.html#time-series-chains-6",
-    "href": "index.html#time-series-chains-6",
-    "title": "",
-    "section": "Time Series Chains ⛓️",
-    "text": "Time Series Chains ⛓️"
-  },
-  {
     "objectID": "index.html#simliarties-between-two-time-series-1",
     "href": "index.html#simliarties-between-two-time-series-1",
     "title": "",
@@ -200,21 +179,14 @@
     "href": "index.html#simliarties-between-two-time-series-2",
     "title": "",
     "section": "Simliarties Between Two Time Series 🧬",
-    "text": "Simliarties Between Two Time Series 🧬\nstumpy.stump\nm = 500\nqueen_mp = stumpy.stump(\n  T_A = queen,\n  m = m,\n  T_B = ice_ice_baby,\n  ignore_trivial = False\n)"
+    "text": "Simliarties Between Two Time Series 🧬\nstumpy.stump\nm = 500\nunder_pressure_mp = stumpy.stump(\n  T_A = under_pressure,\n  m = m,\n  T_B = ice_ice_baby,\n  ignore_trivial = False\n)"
   },
   {
     "objectID": "index.html#simliarties-between-two-time-series-3",
     "href": "index.html#simliarties-between-two-time-series-3",
     "title": "",
     "section": "Simliarties Between Two Time Series 🧬",
-    "text": "Simliarties Between Two Time Series 🧬"
-  },
-  {
-    "objectID": "index.html#simliarties-between-two-time-series-4",
-    "href": "index.html#simliarties-between-two-time-series-4",
-    "title": "",
-    "section": "Simliarties Between Two Time Series 🧬",
-    "text": "Simliarties Between Two Time Series 🧬\nqueen_motif_index = queen_mp[:, 0].argmin()\nvanilla_ice_motif_index = queen_mp[queen_motif_index, 1]"
+    "text": "Simliarties Between Two Time Series 🧬\nunder_pressure_motif_index = under_pressure_mp[:, 0].argmin()\n\nvanilla_ice_motif_index = under_pressure_mp[under_pressur_motif_index, 1]"
   },
   {
     "objectID": "index.html#shapelet-1",
