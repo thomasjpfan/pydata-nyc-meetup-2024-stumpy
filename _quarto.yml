@@ -1,0 +1,20 @@
+project:
+  type: website
+  output-dir: docs
+  render:
+    - index.qmd
+
+website:
+  favicon: images/favicon.ico
+  site-url: https://thomasjpfan.github.io/pydata-nyc-meetup-2024-stumpy/
+  search: false
+  twitter-card:
+    creator: "@thomasjpfan"
+    card-style: summary
+    image: images/favicon_org.png
+  open-graph:
+    image: images/favicon_org.png
+
+format:
+  html:
+    theme: cosmo

@@ -1,0 +1,470 @@
+---
+title: "Time Series EDA with STUMPY"
+author: "Thomas J. Fan"
+description: Time Series EDA with STUMPY
+format:
+  revealjs:
+    theme: [default, partials/custom.scss]
+    include-in-header: partials/heading-meta.html
+    template-partials:
+      - partials/title-slide.html  # this is empty so that the header slide is defined below
+    show-slide-number: print
+    html-math-method: plain  # change to katex if there is math
+    width: 1920
+    height: 1080
+    auto-stretch: false
+    menu: false
+    chalkboard: false
+    multiplex: false
+    center: true
+    highlight-style: arrow
+---
+
+## Time Series EDA with STUMPY{.header}
+
+![](images/stumpy_logo_large.png){width=50%}
+
+:::: {.social-media}
+::: {.author}
+Thomas J. Fan
+:::
+[@thomasjpfan](https://www.github.com/thomasjpfan){.author-link}
+
+[](https://www.github.com/thomasjpfan){.fa-brands .fa-github}
+[](https://www.twitter.com/thomasjpfan){.fa-brands .fa-twitter}
+[](https://www.linkedin.com/in/thomasjpfan/){.fa-brands .fa-linkedin}
+
+[github.com/thomasjpfan/pydata-nyc-meetup-2024-stumpy](https://www.github.com/thomasjpfan/pydata-nyc-meetup-2024-stumpy){.talk-link}
+::::
+
+## About Me
+
+:::: {.columns .g-middle}
+::: {.column width=60%}
+
+- Senior Machine Learning Engineer @ **Union.ai**
+- Maintainer for **scikit-learn**
+:::
+
+::: {.column .g-center width=40%}
+![](images/union.png)
+<br>
+![](images/scikit-learn-logo.jpg){width=50%}
+:::
+
+::::
+
+## Contents
+
+:::: {.columns .g-middle}
+::: {.column}
+- Motivation 💭
+- Matrix Profile 🪪
+- Applications 🚀
+- Computation 💻
+:::
+
+::: {.column}
+![](images/stumpy_logo_large.png)
+:::
+::::
+
+## Motivation 💭
+
+![](images/time_series_different_lengths.png)
+
+# Matrix Profile 🪪
+
+##
+
+![](images/time_series_viz.jpeg)
+
+##
+
+![](images/subsequence_b.jpeg)
+
+##
+
+![](images/subsequence_c.jpeg)
+
+##
+
+![](images/subsequences.jpeg)
+
+##
+
+![](images/euclidean_distance.jpeg)
+
+##
+
+![](images/pairwise_euclidean_distance.gif){width=100%}
+
+##
+
+![](images/trivial_match.jpeg)
+
+##
+
+![](images/distance_matrix.gif){width=100%}
+
+##
+
+![](images/distance_matrix.jpeg)
+
+##
+
+![](images/matrix_profile.gif){width=100%}
+
+## Matrix Profile 🪪
+
+![](images/matrix_profile.jpeg){width=80% fig-align="center"}
+
+## Detail: Z-normalized
+
+![](images/subsequences.jpeg){width=50% fig-align="center"}
+
+```{.python code-line-numbers="|1-2|4-7"}
+x = np.asarray([0, 1, 3, 2], dtype=np.float64)
+y = np.asarray([1, 2, 2, 10], dtype=np.float64)
+
+x_normed = (x - np.mean(x)) / np.std(x)
+y_normed = (y - np.mean(y)) / np.std(y)
+
+z_normed_distance = np.sqrt(np.sum((x_normed - y_normed)**2))
+```
+
+## Matrix Profile 🪪
+
+![](images/matrix_profile.jpeg){width=80% fig-align="center"}
+
+# Applications 🚀
+
+## Applications 🚀
+
+Tutorials: [stumpy.readthedocs.io/en/latest/tutorials.html](https://stumpy.readthedocs.io/en/latest/tutorials.html)
+
+# Motify Discovery
+
+## Motify Discovery
+
+![](images/steam_flow.png){width="100%"}
+
+## Motify Discovery
+
+`stumpy.stump`
+
+```python
+m = 640
+mp_steam = stumpy.stump(steam_flow, m)
+
+motif_idx = np.argsort(mp_steam[:, 0])[0]
+nearest_neighbor_idx = mp_steam[motif_idx, 1]
+```
+
+## Moify Discovery
+
+![](images/steam_motify.png)
+
+# Anomaly / Novelty Discovery
+
+## Anomaly / Novelty Discovery
+
+![](images/steam_flow_discord.png)
+
+# Semantic Segmentation
+
+## Semantic Segmentation
+
+![](images/blood_pressure.png)
+
+## Semantic Segmentation
+
+![](images/blood_pressure_segmentation.png)
+
+## Semantic Segmentation
+
+`stump.fluss`
+
+```{.python code-line-numbers="|4-9"}
+m = L = 210
+mp_adp = stumpy.stump(abp, m=m)
+
+cac, regime_locations = stumpy.fluss(
+    mp_adp[:, 1],
+    L=L,
+    n_regimes=2,
+    excl_factor=1,
+)
+```
+
+## Semantic Segmentation
+
+![](images/blood_pressure_fluss.png)
+
+# Fast Pattern Matching
+
+## Fast Pattern Matching
+
+![](images/robot_dog.png)
+
+## Fast Pattern Matching
+### Query
+
+![](images/query_subsequence.png)
+
+## Fast Pattern Matching
+
+`stumpy.mass`
+
+```python
+distance_profile = stumpy.mass(query, ts)
+
+idx = np.argmin(distance_profile)
+```
+
+![](images/pattern_match_query_vs_nn.png)
+
+## Fast Pattern Matching
+
+![](images/match_find.png)
+
+## Fast Pattern Matching
+
+`stump.match`
+
+```python
+matches = stumpy.match(
+    query, ts,
+    max_distance=lambda D: max(np.mean(D) - 4 * np.std(D), np.min(D))
+)
+```
+
+![](images/many_match_find.png)
+
+# Time Series Chains
+
+## Time Series Chains
+
+![](images/time_series_chains.png)
+
+## Time Series Chains
+
+![](images/time_series_chain_1.png)
+
+## Time Series Chains
+
+![](images/volumne_per_year.png)
+
+## Time Series Chains
+
+`stump.allc`
+
+```{.python code-line-numbers="|4-7"}
+m = 20
+mp_volume = stumpy.stump(volume, m=m)
+
+all_chain_set, unanchored_chain = stumpy.allc(
+    mp_volume[:, 2],
+    mp_volume[:, 3],
+)
+```
+
+## Time Series Chains
+
+![](images/volume_chain_year.png)
+
+## Time Series Chains
+
+![](images/volume_chain_year_only.png)
+
+# Simliarties Between Two Time Series
+
+## Simliarties Between Two Time Series
+
+![](images/under_pressure_vs_ice_ice_baby.png)
+
+## Simliarties Between Two Time Series
+
+`stumpy.stump`
+
+```python
+m = 500
+queen_mp = stumpy.stump(
+  T_A = queen,
+  m = m,
+  T_B = ice_ice_baby,
+  ignore_trivial = False
+)
+```
+
+## Simliarties Between Two Time Series
+
+![](images/under_pressure_vs_ice_ice_baby_profile.png)
+
+## Simliarties Between Two Time Series
+
+```python
+queen_motif_index = queen_mp[:, 0].argmin()
+vanilla_ice_motif_index = queen_mp[queen_motif_index, 1]
+```
+
+![](images/under_pressure_ice_ice_overlap.png)
+
+# Shapelet
+
+## Shapelet
+
+![](images/point_vs_gun.png)
+
+## Shapelet
+
+```{.python code-line-numbers="|3|5"}
+m = 38
+
+P_Point_Point_mp = stumpy.stump(T_A=point, m=m)
+
+P_Point_Gun_mp = stumpy.stump(T_A=point, m=m, T_B=gun, ignore_trivial=False)
+```
+
+![](images/point_gun_point_point_diff.png)
+
+## Shapelet
+
+![](images/point_shaplets.png){width=100%}
+
+## Shapelet + ML
+
+```{.python code-line-numbers="|1-7|4-10"}
+print(train_ts.shape)
+# (50, 150)
+
+# Uses `stumpy.mass`
+X_train = distance_to_shapelets(train_ts, point_shapelets)
+print(X_train.shape)
+# (50, 10)
+
+X_test = distance_to_shapelets(test_ts, point_shapelets)
+```
+
+## Shapelet + ML
+
+```python
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score
+
+clf = RandomForestClassifier()
+
+clf.fit(X_train, y_train)
+y_pred = clf.predict(X_test)
+
+print(f"Accuracy for ML model: {round(accuracy_score(y_test, y_pred), 3)}")
+# Accuracy for ML model: 0.927
+```
+
+# Computation 💻
+
+## GPUs
+
+:::: {.columns .g-middle}
+::: {.column}
+
+`stumpy.gpu_stump`
+
+```python
+import stumpy
+
+mp = stumpy.gpu_stump(time_series, m=m)
+```
+
+:::
+
+::: {.column .g-center}
+
+![](images/numba.jpg)
+![](images/nvidia.jpg)
+
+:::
+::::
+
+
+## Distributed STUMP
+
+
+![](images/dask.jpg){width="20%"}
+
+```python
+import stumpy
+from dask.distributed import Client
+
+with Client() as dask_client:
+    mp = stumpy.stumped(dask_client, time_series, m=m)
+```
+
+## Fast Approximate Matrix Profiles
+
+- `stumpy.scrump`
+
+```python
+approx = stumpy.scrump(time_series, m, ...)
+```
+
+![](images/fast.png){width=100%}
+
+## Pan Matrix
+
+`stump.stimp`
+
+![](images/pan.png){width=100%}
+
+## Streaming Data
+
+`stump.stumpi`
+
+```python
+stream = stumpy.stumpi(initial_time_series, m, egress=False)
+
+stream.update(new_data_point)
+```
+
+![](images/stumpi.mp4)
+
+## Time Series EDA with STUMPY
+
+:::: {.columns .g-middle}
+::: {.column}
+- Motivation 💭
+- Matrix Profile 🪪
+- Applications 🚀
+- Computation 💻
+:::
+
+::: {.column}
+![](images/stumpy_logo_large.png)
+:::
+::::
+
+
+## Time Series EDA with STUMPY{.center-header}
+
+:::::{.g-center}
+
+![](images/stumpy_logo_large.png){width="30%" fig-align="center"}
+
+
+**Learn More**: [stumpy.readthedocs.io/en/latest/tutorials.html](https://stumpy.readthedocs.io/en/latest/tutorials.html)
+
+---
+
+:::: {.social-media}
+::: {.author}
+Thomas J. Fan
+:::
+::::
+[@thomasjpfan](https://www.github.com/thomasjpfan){.author-link}
+
+[](https://www.github.com/thomasjpfan){.fa-brands .fa-github}
+[](https://www.twitter.com/thomasjpfan){.fa-brands .fa-twitter}
+[](https://www.linkedin.com/in/thomasjpfan/){.fa-brands .fa-linkedin}
+
+[github.com/thomasjpfan/pydata-nyc-meetup-2024-stumpy](https://www.github.com/thomasjpfan/pydata-nyc-meetup-2024-stumpy){.talk-link}
+:::::
