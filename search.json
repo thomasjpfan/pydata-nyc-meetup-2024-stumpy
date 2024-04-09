@@ -1,0 +1,303 @@
+[
+  {
+    "objectID": "index.html#time-series-eda-with-stumpy",
+    "href": "index.html#time-series-eda-with-stumpy",
+    "title": "",
+    "section": "Time Series EDA with STUMPY",
+    "text": "Time Series EDA with STUMPY\n\n\n\nThomas J. Fan\n\n@thomasjpfan\n  \ngithub.com/thomasjpfan/pydata-nyc-meetup-2024-stumpy"
+  },
+  {
+    "objectID": "index.html#about-me",
+    "href": "index.html#about-me",
+    "title": "",
+    "section": "About Me",
+    "text": "About Me\n\n\n\nSenior Machine Learning Engineer @ Union.ai\nMaintainer for scikit-learn"
+  },
+  {
+    "objectID": "index.html#contents",
+    "href": "index.html#contents",
+    "title": "",
+    "section": "Contents",
+    "text": "Contents\n\n\n\nMotivation 💭\nMatrix Profile 🪪\nApplications 🚀\nComputation 💻"
+  },
+  {
+    "objectID": "index.html#motivation",
+    "href": "index.html#motivation",
+    "title": "",
+    "section": "Motivation 💭",
+    "text": "Motivation 💭"
+  },
+  {
+    "objectID": "index.html#matrix-profile-1",
+    "href": "index.html#matrix-profile-1",
+    "title": "",
+    "section": "Matrix Profile 🪪",
+    "text": "Matrix Profile 🪪"
+  },
+  {
+    "objectID": "index.html#detail-z-normalized",
+    "href": "index.html#detail-z-normalized",
+    "title": "",
+    "section": "Detail: Z-normalized",
+    "text": "Detail: Z-normalized\n\n\n\n\n\nx = np.asarray([0, 1, 3, 2], dtype=np.float64)\ny = np.asarray([1, 2, 2, 10], dtype=np.float64)\n\nx_normed = (x - np.mean(x)) / np.std(x)\ny_normed = (y - np.mean(y)) / np.std(y)\n\nz_normed_distance = np.sqrt(np.sum((x_normed - y_normed)**2))"
+  },
+  {
+    "objectID": "index.html#matrix-profile-2",
+    "href": "index.html#matrix-profile-2",
+    "title": "",
+    "section": "Matrix Profile 🪪",
+    "text": "Matrix Profile 🪪"
+  },
+  {
+    "objectID": "index.html#applications-1",
+    "href": "index.html#applications-1",
+    "title": "",
+    "section": "Applications 🚀",
+    "text": "Applications 🚀\n\nMotify Discovery 💡\nAnomaly / Novelty Discovery 👽\nSemantic Segmentation ✂\nFast Pattern Matching 🪢\nTime Series Chains ⛓️\nSimliarties Between Two Time Series 🧬\nShapelet + ML 💠\n\nTutorials: stumpy.readthedocs.io/en/latest/tutorials.html"
+  },
+  {
+    "objectID": "index.html#motify-discovery-1",
+    "href": "index.html#motify-discovery-1",
+    "title": "",
+    "section": "Motify Discovery 💡",
+    "text": "Motify Discovery 💡"
+  },
+  {
+    "objectID": "index.html#motify-discovery-2",
+    "href": "index.html#motify-discovery-2",
+    "title": "",
+    "section": "Motify Discovery 💡",
+    "text": "Motify Discovery 💡\nstumpy.stump\nm = 640\nmp_steam = stumpy.stump(steam_flow, m)\n\nmotif_idx = np.argsort(mp_steam[:, 0])[0]\nnearest_neighbor_idx = mp_steam[motif_idx, 1]"
+  },
+  {
+    "objectID": "index.html#moify-discovery",
+    "href": "index.html#moify-discovery",
+    "title": "",
+    "section": "Moify Discovery 💡",
+    "text": "Moify Discovery 💡"
+  },
+  {
+    "objectID": "index.html#anomaly-novelty-discovery-1",
+    "href": "index.html#anomaly-novelty-discovery-1",
+    "title": "",
+    "section": "Anomaly / Novelty Discovery 👽",
+    "text": "Anomaly / Novelty Discovery 👽"
+  },
+  {
+    "objectID": "index.html#semantic-segmentation-1",
+    "href": "index.html#semantic-segmentation-1",
+    "title": "",
+    "section": "Semantic Segmentation ✂",
+    "text": "Semantic Segmentation ✂"
+  },
+  {
+    "objectID": "index.html#semantic-segmentation-2",
+    "href": "index.html#semantic-segmentation-2",
+    "title": "",
+    "section": "Semantic Segmentation ✂",
+    "text": "Semantic Segmentation ✂"
+  },
+  {
+    "objectID": "index.html#semantic-segmentation-3",
+    "href": "index.html#semantic-segmentation-3",
+    "title": "",
+    "section": "Semantic Segmentation ✂",
+    "text": "Semantic Segmentation ✂\nstump.fluss\nm = L = 210\nmp_adp = stumpy.stump(abp, m=m)\n\ncac, regime_locations = stumpy.fluss(\n    mp_adp[:, 1],\n    L=L,\n    n_regimes=2,\n    excl_factor=1,\n)"
+  },
+  {
+    "objectID": "index.html#semantic-segmentation-4",
+    "href": "index.html#semantic-segmentation-4",
+    "title": "",
+    "section": "Semantic Segmentation ✂",
+    "text": "Semantic Segmentation ✂"
+  },
+  {
+    "objectID": "index.html#fast-pattern-matching-1",
+    "href": "index.html#fast-pattern-matching-1",
+    "title": "",
+    "section": "Fast Pattern Matching 🪢",
+    "text": "Fast Pattern Matching 🪢"
+  },
+  {
+    "objectID": "index.html#fast-pattern-matching-2",
+    "href": "index.html#fast-pattern-matching-2",
+    "title": "",
+    "section": "Fast Pattern Matching 🪢",
+    "text": "Fast Pattern Matching 🪢\nQuery"
+  },
+  {
+    "objectID": "index.html#fast-pattern-matching-3",
+    "href": "index.html#fast-pattern-matching-3",
+    "title": "",
+    "section": "Fast Pattern Matching 🪢",
+    "text": "Fast Pattern Matching 🪢\nstumpy.mass\ndistance_profile = stumpy.mass(query, ts)\n\nidx = np.argmin(distance_profile)"
+  },
+  {
+    "objectID": "index.html#fast-pattern-matching-4",
+    "href": "index.html#fast-pattern-matching-4",
+    "title": "",
+    "section": "Fast Pattern Matching 🪢",
+    "text": "Fast Pattern Matching 🪢"
+  },
+  {
+    "objectID": "index.html#fast-pattern-matching-5",
+    "href": "index.html#fast-pattern-matching-5",
+    "title": "",
+    "section": "Fast Pattern Matching 🪢",
+    "text": "Fast Pattern Matching 🪢\nstump.match\nmatches = stumpy.match(\n    query, ts,\n    max_distance=lambda D: max(np.mean(D) - 4 * np.std(D), np.min(D))\n)"
+  },
+  {
+    "objectID": "index.html#time-series-chains-1",
+    "href": "index.html#time-series-chains-1",
+    "title": "",
+    "section": "Time Series Chains ⛓️",
+    "text": "Time Series Chains ⛓️"
+  },
+  {
+    "objectID": "index.html#time-series-chains-2",
+    "href": "index.html#time-series-chains-2",
+    "title": "",
+    "section": "Time Series Chains ⛓️",
+    "text": "Time Series Chains ⛓️"
+  },
+  {
+    "objectID": "index.html#time-series-chains-3",
+    "href": "index.html#time-series-chains-3",
+    "title": "",
+    "section": "Time Series Chains ⛓️",
+    "text": "Time Series Chains ⛓️"
+  },
+  {
+    "objectID": "index.html#time-series-chains-4",
+    "href": "index.html#time-series-chains-4",
+    "title": "",
+    "section": "Time Series Chains ⛓️",
+    "text": "Time Series Chains ⛓️\nstump.allc\nm = 20\nmp_volume = stumpy.stump(volume, m=m)\n\nall_chain_set, unanchored_chain = stumpy.allc(\n    mp_volume[:, 2],\n    mp_volume[:, 3],\n)"
+  },
+  {
+    "objectID": "index.html#time-series-chains-5",
+    "href": "index.html#time-series-chains-5",
+    "title": "",
+    "section": "Time Series Chains ⛓️",
+    "text": "Time Series Chains ⛓️"
+  },
+  {
+    "objectID": "index.html#time-series-chains-6",
+    "href": "index.html#time-series-chains-6",
+    "title": "",
+    "section": "Time Series Chains ⛓️",
+    "text": "Time Series Chains ⛓️"
+  },
+  {
+    "objectID": "index.html#simliarties-between-two-time-series-1",
+    "href": "index.html#simliarties-between-two-time-series-1",
+    "title": "",
+    "section": "Simliarties Between Two Time Series 🧬",
+    "text": "Simliarties Between Two Time Series 🧬"
+  },
+  {
+    "objectID": "index.html#simliarties-between-two-time-series-2",
+    "href": "index.html#simliarties-between-two-time-series-2",
+    "title": "",
+    "section": "Simliarties Between Two Time Series 🧬",
+    "text": "Simliarties Between Two Time Series 🧬\nstumpy.stump\nm = 500\nqueen_mp = stumpy.stump(\n  T_A = queen,\n  m = m,\n  T_B = ice_ice_baby,\n  ignore_trivial = False\n)"
+  },
+  {
+    "objectID": "index.html#simliarties-between-two-time-series-3",
+    "href": "index.html#simliarties-between-two-time-series-3",
+    "title": "",
+    "section": "Simliarties Between Two Time Series 🧬",
+    "text": "Simliarties Between Two Time Series 🧬"
+  },
+  {
+    "objectID": "index.html#simliarties-between-two-time-series-4",
+    "href": "index.html#simliarties-between-two-time-series-4",
+    "title": "",
+    "section": "Simliarties Between Two Time Series 🧬",
+    "text": "Simliarties Between Two Time Series 🧬\nqueen_motif_index = queen_mp[:, 0].argmin()\nvanilla_ice_motif_index = queen_mp[queen_motif_index, 1]"
+  },
+  {
+    "objectID": "index.html#shapelet-1",
+    "href": "index.html#shapelet-1",
+    "title": "",
+    "section": "Shapelet 💠",
+    "text": "Shapelet 💠"
+  },
+  {
+    "objectID": "index.html#shapelet-2",
+    "href": "index.html#shapelet-2",
+    "title": "",
+    "section": "Shapelet 💠",
+    "text": "Shapelet 💠\nm = 38\n\nP_Point_Point_mp = stumpy.stump(T_A=point, m=m)\n\nP_Point_Gun_mp = stumpy.stump(T_A=point, m=m, T_B=gun, ignore_trivial=False)"
+  },
+  {
+    "objectID": "index.html#shapelet-3",
+    "href": "index.html#shapelet-3",
+    "title": "",
+    "section": "Shapelet 💠",
+    "text": "Shapelet 💠"
+  },
+  {
+    "objectID": "index.html#shapelet-ml",
+    "href": "index.html#shapelet-ml",
+    "title": "",
+    "section": "Shapelet + ML 💠",
+    "text": "Shapelet + ML 💠\nprint(train_ts.shape)\n# (50, 150)\n\n# Uses `stumpy.mass`\nX_train = distance_to_shapelets(train_ts, point_shapelets)\nprint(X_train.shape)\n# (50, 10)\n\nX_test = distance_to_shapelets(test_ts, point_shapelets)"
+  },
+  {
+    "objectID": "index.html#shapelet-ml-1",
+    "href": "index.html#shapelet-ml-1",
+    "title": "",
+    "section": "Shapelet + ML 💠",
+    "text": "Shapelet + ML 💠\nfrom sklearn.ensemble import RandomForestClassifier\nfrom sklearn.metrics import accuracy_score\n\nclf = RandomForestClassifier()\n\nclf.fit(X_train, y_train)\ny_pred = clf.predict(X_test)\n\nprint(f\"Accuracy for ML model: {round(accuracy_score(y_test, y_pred), 3)}\")\n# Accuracy for ML model: 0.927"
+  },
+  {
+    "objectID": "index.html#gpus",
+    "href": "index.html#gpus",
+    "title": "",
+    "section": "GPUs",
+    "text": "GPUs\n\n\nstumpy.gpu_stump\nimport stumpy\n\nmp = stumpy.gpu_stump(time_series, m=m)"
+  },
+  {
+    "objectID": "index.html#distributed-stump",
+    "href": "index.html#distributed-stump",
+    "title": "",
+    "section": "Distributed STUMP",
+    "text": "Distributed STUMP\n\nimport stumpy\nfrom dask.distributed import Client\n\nwith Client() as dask_client:\n    mp = stumpy.stumped(dask_client, time_series, m=m)"
+  },
+  {
+    "objectID": "index.html#fast-approximate-matrix-profiles",
+    "href": "index.html#fast-approximate-matrix-profiles",
+    "title": "",
+    "section": "Fast Approximate Matrix Profiles",
+    "text": "Fast Approximate Matrix Profiles\n\nstumpy.scrump\n\napprox = stumpy.scrump(time_series, m, ...)"
+  },
+  {
+    "objectID": "index.html#pan-matrix",
+    "href": "index.html#pan-matrix",
+    "title": "",
+    "section": "Pan Matrix",
+    "text": "Pan Matrix\nstump.stimp"
+  },
+  {
+    "objectID": "index.html#streaming-data",
+    "href": "index.html#streaming-data",
+    "title": "",
+    "section": "Streaming Data",
+    "text": "Streaming Data\nstump.stumpi\nstream = stumpy.stumpi(initial_time_series, m, egress=False)\n\nstream.update(new_data_point)\nVideo"
+  },
+  {
+    "objectID": "index.html#time-series-eda-with-stumpy-1",
+    "href": "index.html#time-series-eda-with-stumpy-1",
+    "title": "",
+    "section": "Time Series EDA with STUMPY",
+    "text": "Time Series EDA with STUMPY\n\n\n\nMotivation 💭\nMatrix Profile 🪪\nApplications 🚀\nComputation 💻"
+  },
+  {
+    "objectID": "index.html#time-series-eda-with-stumpy-2",
+    "href": "index.html#time-series-eda-with-stumpy-2",
+    "title": "",
+    "section": "Time Series EDA with STUMPY",
+    "text": "Time Series EDA with STUMPY\n\n\n\n\n\n\nLearn More: stumpy.readthedocs.io/en/latest/tutorials.html\n\n\n\nThomas J. Fan\n\n\n@thomasjpfan\n  \ngithub.com/thomasjpfan/pydata-nyc-meetup-2024-stumpy"
+  }
+]
