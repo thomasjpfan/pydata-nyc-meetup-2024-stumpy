@@ -169,8 +169,6 @@ motif_idx = np.argsort(mp_steam[:, 0])[0]
 nearest_neighbor_idx = mp_steam[motif_idx, 1]
 ```
 
-## Moify Discovery 💡
-
 ![](images/steam_motify.png)
 
 # Anomaly / Novelty Discovery 👽
@@ -204,8 +202,6 @@ cac, regime_locations = stumpy.fluss(
     excl_factor=1,
 )
 ```
-
-## Semantic Segmentation ✂
 
 ![](images/blood_pressure_fluss.png)
 
@@ -277,8 +273,6 @@ all_chain_set, unanchored_chain = stumpy.allc(
 )
 ```
 
-## Time Series Chains ⛓️
-
 ![](images/volume_chain_year.png)
 
 ## Time Series Chains ⛓️
@@ -297,23 +291,22 @@ all_chain_set, unanchored_chain = stumpy.allc(
 
 ```python
 m = 500
-queen_mp = stumpy.stump(
-  T_A = queen,
+under_pressure_mp = stumpy.stump(
+  T_A = under_pressure,
   m = m,
   T_B = ice_ice_baby,
   ignore_trivial = False
 )
 ```
 
-## Simliarties Between Two Time Series 🧬
-
 ![](images/under_pressure_vs_ice_ice_baby_profile.png)
 
 ## Simliarties Between Two Time Series 🧬
 
 ```python
-queen_motif_index = queen_mp[:, 0].argmin()
-vanilla_ice_motif_index = queen_mp[queen_motif_index, 1]
+under_pressure_motif_index = under_pressure_mp[:, 0].argmin()
+
+vanilla_ice_motif_index = under_pressure_mp[under_pressur_motif_index, 1]
 ```
 
 ![](images/under_pressure_ice_ice_overlap.png)
